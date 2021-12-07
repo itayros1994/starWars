@@ -15,7 +15,7 @@ export function MovieList({ movies, onSetToFavorties}) {
   return (
     <div className='movie-list-container'>
       <div className='movie-preview-container'>
-      <h2 className='choose-movie'>Choose StarWar Movie 💥</h2>
+      <h2 className='choose-movie'>Choose StarsWar Movie 🎬</h2>
         {movies.map((movie) => {
           return <MoviePreview selectMovie={selectMovie} movie={movie}/>;
         })}

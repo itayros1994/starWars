@@ -70,7 +70,7 @@ export function Header({favoritesMovies}) {
       }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
-    >
+      >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={favoritesMovies.length} color="error">
@@ -107,7 +107,7 @@ export function Header({favoritesMovies}) {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            StarWars-App
+            StarsWar-App
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>

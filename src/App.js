@@ -20,14 +20,14 @@ function App() {
 
   // Add Movie To Favorites
   const onSetToFavorties = (movie) => {
-    handleClick();
-    handleClose();
     if (
       favoritesMovies.findIndex(
         (favoriteMovie) => favoriteMovie.title === movie.title
       ) !== -1
     )
       return favoritesMovies;
+    handleClick();
+    handleClose();
     setFavoritesMovies([...favoritesMovies, movie]);
     localStorage.setItem("favoritesMovies", JSON.stringify(favoritesMovies));
   };
@@ -39,7 +39,6 @@ function App() {
     );
     localStorage.setItem("favoritesMovies", JSON.stringify(favoritesMovies));
   };
-
 
   // Closing And Opening The Snack Bar
   const handleClick = () => {
