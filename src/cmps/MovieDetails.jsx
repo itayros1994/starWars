@@ -7,7 +7,7 @@ import { MovieSummary } from "./MovieSummary";
 import { Button } from "@mui/material";
 
 export function MovieDetails({ movie, onSetToFavorties }) {
-  if (!movie) return <div>Click On Movie For Details!</div>;
+  if (!movie) return <h2 className="hero">Click On Movie!</h2>
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
@@ -22,10 +22,10 @@ export function MovieDetails({ movie, onSetToFavorties }) {
         </Typography>
         <Typography variant="body2"></Typography>
       </CardContent>
-      <MovieSummary movieSum={movie.opening_crawl} />
       <Button onClick={() => onSetToFavorties(movie)} variant="contained">
         Add To Favorites
       </Button>
+      <MovieSummary movieSum={movie.opening_crawl} />
     </Card>
   );
 }

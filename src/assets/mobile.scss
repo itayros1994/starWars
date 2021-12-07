@@ -1,0 +1,21 @@
+@media only screen and (max-width: 600px) {
+  .movie-list-container {
+    margin: 20px;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .movie-preview-container {
+    width: 100% !important;
+  }
+
+  .movie-details-container {
+    margin-top: 20px;
+    align-items: center;
+    margin-left: 0px !important;
+    width: 105% !important;
+    padding-bottom: 10px !important;
+  }
+}

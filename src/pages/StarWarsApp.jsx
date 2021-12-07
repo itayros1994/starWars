@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MovieService } from "../Services/MovieService";
 import { MovieList } from "../cmps/MovieList";
 
-export function StarWarsApp({onSetToFavorties}) {
+export function StarWarsApp({ onSetToFavorties}) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -12,11 +12,10 @@ export function StarWarsApp({onSetToFavorties}) {
     });
   }, []);
 
-
-
   return (
     <div>
-      <MovieList onSetToFavorties={onSetToFavorties}  movies={movies} />
+      <h2 className="hero">StarWars App!</h2>
+      <MovieList onSetToFavorties={onSetToFavorties} movies={movies} />
     </div>
   );
 }
