@@ -25,7 +25,9 @@ export function MovieDetails({ movie, onSetToFavorties }) {
       <Button onClick={() => onSetToFavorties(movie)} variant="contained">
         Add To Favorites
       </Button>
+      <div className='movie-summary'>
       <MovieSummary movieSum={movie.opening_crawl} />
+      </div>
     </Card>
   );
 }

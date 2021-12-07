@@ -13,9 +13,9 @@ export function MovieList({ movies, onSetToFavorties}) {
 
   if (!movies.length) return <div className="loader"> <Loader color="#00BFFF" type="Circles"/></div>; 
   return (
-    <div className="movie-list-container">
-      <div className="movie-preview-container">
-      <h2 className="choose-movie">Choose Movie</h2>
+    <div className='movie-list-container'>
+      <div className='movie-preview-container'>
+      <h2 className='choose-movie'>Choose StarWar Movie 💥</h2>
         {movies.map((movie) => {
           return <MoviePreview selectMovie={selectMovie} movie={movie}/>;
         })}
@@ -24,5 +24,5 @@ export function MovieList({ movies, onSetToFavorties}) {
         <MovieDetails onSetToFavorties={onSetToFavorties} movie={selectedMovie} />
       </div>
     </div>
-  );
+  )
 }

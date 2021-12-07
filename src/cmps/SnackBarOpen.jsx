@@ -8,14 +8,11 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-export function SnackBar({open}) {
+export function SnackBarOpen({open}) {
 
   
   return (
     <Stack spacing={2} sx={{ width: '100%' }}>
-      {/* <Button variant="outlined" onClick={handleClick}>
-        Open success snackbar
-      </Button> */}
       <Snackbar open={open} autoHideDuration={6000}>
         <Alert severity="success" sx={{ width: '100%' }}>
           Added To Favortite

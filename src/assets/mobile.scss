@@ -9,6 +9,7 @@
 
   .movie-preview-container {
     width: 100% !important;
+    padding:10px !important;
   }
 
   .movie-details-container {
@@ -18,4 +19,16 @@
     width: 105% !important;
     padding-bottom: 10px !important;
   }
+
+  .footer {
+    display: none !important;
+  }
+
+.movie-summary {
+  margin-bottom: 20px;
+}
+
+.main-container {
+  width: 100% !important;
+}
 }

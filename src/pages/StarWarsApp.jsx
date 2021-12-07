@@ -14,7 +14,7 @@ export function StarWarsApp({ onSetToFavorties}) {
 
   return (
     <div>
-      <h2 className="hero">StarWars App!</h2>
+      <h2 className='hero'>StarWars App 💥 </h2>
       <MovieList onSetToFavorties={onSetToFavorties} movies={movies} />
     </div>
   );
