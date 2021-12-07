@@ -1,9 +1,11 @@
 import React from 'react'
 
-export function Favorties() {
+export function Favorties({favoritesMovies}) {
     return (
         <div>
-            FAVORITES!
+            {favoritesMovies.map(movie => {
+                return <div>{movie.title}</div>
+            })}
         </div>
     )
 }

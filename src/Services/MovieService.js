@@ -7,7 +7,7 @@ getMovies
 
 function getMovies(){
     return axios
-    .get(`https://swapi.dev/api/starships`)
+    .get(`https://swapi.dev/api/films`)
     .then(res => res.data)
 
 }

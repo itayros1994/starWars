@@ -1,0 +1,18 @@
+.movie-list-container {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.movie-details-container {
+  height: 400px;
+  width: 700px;
+  border: 1px solid black;
+}
+
+.movie-preview-container {
+  width: 300px;
+  border: 1px solid black;
+  cursor: pointer;
+}

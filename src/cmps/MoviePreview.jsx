@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
-export function MoviePreview({movie}) {
-    return (
-        <div className="movie-preview-container">
-        <div>{movie.name}</div>
-        </div>
-    )
+export function MoviePreview({ movie, selectMovie }) {
+  return (
+    <div onClick={() => selectMovie(movie)} className="movie-preview-container">
+      <div>{movie.title}</div>
+    </div>
+  );
 }
