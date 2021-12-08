@@ -5,6 +5,12 @@ import { DetailsModal } from "../cmps/DetailsModal";
 
 export function Favorties({ favoritesMovies, onRemoveFromFavorites }) {
   const [openModal, setOpenModal] = useState(false);
+  const [selctedMovie, setSelctedMovie] = useState({});
+
+  const selectMovie = (movie) => {
+    setSelctedMovie(movie);
+    setOpenModal(true);
+  };
 
   return (
     <div>
@@ -15,12 +21,7 @@ export function Favorties({ favoritesMovies, onRemoveFromFavorites }) {
             <div className="favorite">
               <MoviePreview
                 movie={movie}
-                selectMovie={() => setOpenModal(true)}
-              />
-              <DetailsModal
-                movie={movie}
-                open={openModal}
-                onClose={() => setOpenModal(false)}
+                selectMovie={() => selectMovie(movie)}
               />
               <Button
                 variant="contained"
@@ -29,6 +30,11 @@ export function Favorties({ favoritesMovies, onRemoveFromFavorites }) {
               >
                 Remove
               </Button>
+              <DetailsModal
+                movie={selctedMovie}
+                open={openModal}
+                onClose={() => setOpenModal(false)}
+              />
             </div>
           );
         })}
