@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import Loader from "react-loader-spinner";
 import { MoviePreview } from "./MoviePreview";
 import { MovieDetails } from "./MovieDetails";
-import Loader from "react-loader-spinner";
 
 export function MovieList({ movies, onSetToFavorties }) {
   const [selectedMovie, setSelectedMovie] = useState("");
@@ -18,7 +18,6 @@ export function MovieList({ movies, onSetToFavorties }) {
   if (!movies.length)
     return (
       <div className="loader">
-        {" "}
         <Loader color="#00BFFF" type="Circles" />
       </div>
     );

@@ -27,14 +27,6 @@ body {
   position: fixed;
 }
 
-.hero {
-  color: rgb(179, 179, 179);
-}
-
-.link {
-  color: white !important;
-}
-
 .loader {
   position: absolute;
   top: 50%;
@@ -47,17 +39,18 @@ body {
   height: 460px;
 }
 
+.hero {
+  color: rgb(179, 179, 179);
+}
+
+.link {
+  color: #ffffff !important;
+}
+
+.link-mobile {
+  color: black !important;
+}
+
 .none {
   display: none !important;
-}
-
-.block {
-  display: block !important;
-}
-
-.img-details {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  text-align: center;
 }

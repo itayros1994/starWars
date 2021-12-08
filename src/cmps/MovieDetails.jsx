@@ -10,7 +10,6 @@ export function MovieDetails({ movie, onSetToFavorties, isModal }) {
     return (
       <div>
         <h2 className="hero animate-flicker">
-          {" "}
           <span className="left-arrorw">⬅</span> Click On Movie 🎬
         </h2>
         <img
@@ -33,7 +32,6 @@ export function MovieDetails({ movie, onSetToFavorties, isModal }) {
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           {movie.release_date}
         </Typography>
-        <Typography variant="body2"></Typography>
       </CardContent>
       <Button
         className={isModal ? "none" : ""}

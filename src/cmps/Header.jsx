@@ -73,7 +73,7 @@ export function Header({ favoritesMovies }) {
           <Badge badgeContent={favoritesMovies.length} color="error">
             <Link
               onClick={() => handleMenuClose()}
-              className="link"
+              className="link-mobile"
               to="/favorites"
             >
               <StarOutlineIcon />
@@ -82,7 +82,7 @@ export function Header({ favoritesMovies }) {
         </IconButton>
         <Link
           onClick={() => handleMenuClose()}
-          className="link"
+          className="link-mobile"
           to="/favorites"
         >
           <p>Favorites</p>
