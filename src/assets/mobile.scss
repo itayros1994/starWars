@@ -9,7 +9,7 @@
 
   .movie-preview-container {
     width: 100% !important;
-    padding:10px !important;
+    padding: 10px !important;
   }
 
   .movie-details-container {
@@ -24,11 +24,15 @@
     display: none !important;
   }
 
-.movie-summary {
-  margin-bottom: 20px;
-}
+  .movie-summary {
+    margin-bottom: 20px;
+  }
 
-.main-container {
-  width: 100% !important;
-}
+  .main-container {
+    width: 100% !important;
+  }
+
+  .left-arrorw {
+    display: none;
+  }
 }

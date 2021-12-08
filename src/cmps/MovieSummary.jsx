@@ -1,11 +1,11 @@
-import * as React from 'react';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import * as React from "react";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-export function MovieSummary({movieSum}) {
+export function MovieSummary({ movieSum }) {
   return (
     <div>
       <Accordion>
@@ -17,9 +17,7 @@ export function MovieSummary({movieSum}) {
           <Typography>Movie Summary</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-           {movieSum}
-          </Typography>
+          <Typography>{movieSum}</Typography>
         </AccordionDetails>
       </Accordion>
     </div>

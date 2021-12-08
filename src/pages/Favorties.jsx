@@ -1,12 +1,11 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { MoviePreview } from "../cmps/MoviePreview";
+import { DetailsModal } from "../cmps/DetailsModal";
 
 export function Favorties({ favoritesMovies, onRemoveFromFavorites }) {
+  const [openModal, setOpenModal] = useState(false);
 
-  const nothing =()=> {
-  }
-  
   return (
     <div>
       <h2 className="hero">Favorites Movies 💫</h2>
@@ -14,8 +13,20 @@ export function Favorties({ favoritesMovies, onRemoveFromFavorites }) {
         {favoritesMovies.map((movie) => {
           return (
             <div className="favorite">
-              <MoviePreview movie={movie} selectMovie={nothing} />
-              <Button variant="contained" color="info" onClick={() => onRemoveFromFavorites(movie)}>
+              <MoviePreview
+                movie={movie}
+                selectMovie={() => setOpenModal(true)}
+              />
+              <DetailsModal
+                movie={movie}
+                open={openModal}
+                onClose={() => setOpenModal(false)}
+              />
+              <Button
+                variant="contained"
+                color="info"
+                onClick={() => onRemoveFromFavorites(movie)}
+              >
                 Remove
               </Button>
             </div>

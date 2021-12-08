@@ -10,7 +10,7 @@ import "./assets/style/main.scss";
 
 function App() {
   const [favoritesMovies, setFavoritesMovies] = useState([]);
-  const [open, setOpen] = useState(false);
+  const [snackBarOpen, setSnackBarOpen] = useState(false);
 
   useEffect(() => {
     const favoritesMoviesFromLS =
@@ -18,37 +18,29 @@ function App() {
     setFavoritesMovies(favoritesMoviesFromLS);
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("favoritesMovies", JSON.stringify(favoritesMovies));
+  }, [favoritesMovies]);
+
   // Add Movie To Favorites
   const onSetToFavorties = (movie) => {
     if (
       favoritesMovies.findIndex(
-        (favoriteMovie) => favoriteMovie.title === movie.title
+        (favoriteMovie) => favoriteMovie.episode_id === movie.episode_id
       ) !== -1
     )
       return favoritesMovies;
-    handleClick();
-    handleClose();
-    setFavoritesMovies([...favoritesMovies, movie]);
-    localStorage.setItem("favoritesMovies", JSON.stringify(favoritesMovies));
+      setFavoritesMovies((favoritesMovies) => [...favoritesMovies, movie]);
+      setSnackBarOpen(true)
   };
 
   // Remove Movie From Favorites
   const onRemoveFromFavorites = (removedMovie) => {
     setFavoritesMovies(
-      favoritesMovies.filter((movie) => movie.title !== removedMovie.title)
+      favoritesMovies.filter(
+        (movie) => movie.episode_id !== removedMovie.episode_id
+      )
     );
-    localStorage.setItem("favoritesMovies", JSON.stringify(favoritesMovies));
-  };
-
-  // Closing And Opening The Snack Bar
-  const handleClick = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setTimeout(() => {
-      setOpen(false);
-    }, 3000);
   };
 
   return (
@@ -68,7 +60,7 @@ function App() {
             </Route>
           </div>
         </Switch>
-        <SnackBarOpen open={open} />
+        <SnackBarOpen onClose={()=> setSnackBarOpen(false)} open={snackBarOpen} />
         <Footer />
       </Router>
     </div>

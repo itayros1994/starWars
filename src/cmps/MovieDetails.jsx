@@ -1,13 +1,26 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { MovieSummary } from "./MovieSummary";
 import { Button } from "@mui/material";
 
-export function MovieDetails({ movie, onSetToFavorties }) {
-  if (!movie) return <h2 className="hero">Click On Movie!</h2>
+export function MovieDetails({ movie, onSetToFavorties, isModal }) {
+  if (!movie)
+    return (
+      <div>
+        <h2 className="hero animate-flicker">
+          {" "}
+          <span className="left-arrorw">⬅</span> Click On Movie 🎬
+        </h2>
+        <img
+          className="starwars-img"
+          src="https://images-na.ssl-images-amazon.com/images/I/91vD4udQl2L.jpg"
+          alt=""
+        />
+      </div>
+    );
+
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
@@ -22,11 +35,15 @@ export function MovieDetails({ movie, onSetToFavorties }) {
         </Typography>
         <Typography variant="body2"></Typography>
       </CardContent>
-      <Button onClick={() => onSetToFavorties(movie)} variant="contained">
+      <Button
+        className={isModal ? "none" : ""}
+        onClick={() => onSetToFavorties(movie)}
+        variant="contained"
+      >
         Add To Favorites
       </Button>
-      <div className='movie-summary'>
-      <MovieSummary movieSum={movie.opening_crawl} />
+      <div className="movie-summary">
+        <MovieSummary movieSum={movie.opening_crawl} />
       </div>
     </Card>
   );
